@@ -1,0 +1,31 @@
+{
+  "name": "@matthewcpp/webgl-samples",
+  "version": "0.0.1",
+  "description": "Sample programs written with the webgl framework",
+  "scripts": {
+    "build": "node build/build-example.js",
+    "server": "npx http-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewcpp/webgl-samples.git"
+  },
+  "keywords": [
+    "webgl"
+  ],
+  "author": "Matthew LaRocca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewcpp/webgl-samples/issues"
+  },
+  "homepage": "https://github.com/matthewcpp/webgl-samples#readme",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "fs-extra": "^9.0.1",
+    "gl-matrix": "^3.3.0",
+    "http-server": "^0.12.3",
+    "rollup": "^2.26.4",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "typescript": "^3.9.7"
+  }
+}
