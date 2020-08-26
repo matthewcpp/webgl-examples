@@ -1,0 +1,14 @@
+# This file contains example configuration settings for building the examples.
+
+[rollup]
+
+# The path to use for the webgl module import
+webglModulePath = "/webgl/webgl.es.js"
+
+# The path to use for gl-matrix module import.
+glMatrixModulePath = "/gl-matrix/index.js"
+
+[sampleAssets]
+
+# The base path to use with the modelUrl method.
+modelBaseUrl = "http://www.example.com/models/"

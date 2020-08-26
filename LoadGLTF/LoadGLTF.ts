@@ -1,6 +1,8 @@
 import {glMatrix} from "gl-matrix";
 import {Arcball, Loader, LightType, Node, Scene} from "webgl"
 
+import {modelUrl} from "../Util/ModelUrl"
+
 let webGl: Scene = null;
 
 window.onload = async () => {
@@ -12,7 +14,7 @@ window.onload = async () => {
     await webGl.init();
 
     const loader = new Loader(webGl);
-    await loader.load("/models/OrientationTest/OrientationTest.gltf");
+    await loader.load(modelUrl("OrientationTest/OrientationTest.gltf"));
 
     const directionalLight = new Node();
     directionalLight.components.light = webGl.createLight(LightType.Directional, directionalLight);

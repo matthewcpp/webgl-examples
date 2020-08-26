@@ -21,11 +21,13 @@
   "homepage": "https://github.com/matthewcpp/webgl-samples#readme",
   "dependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
     "fs-extra": "^9.0.1",
     "gl-matrix": "^3.3.0",
     "http-server": "^0.12.3",
     "rollup": "^2.26.4",
     "rollup-plugin-typescript2": "^0.27.2",
+    "toml": "^3.0.0",
     "typescript": "^3.9.7"
   }
 }
