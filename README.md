@@ -15,3 +15,27 @@ npm run build <SampleName>
 
 To add additional samples, create a new folder and place all sample related files in it.
 The build script will compile and rollup all typescript files, while copying all others into the `dist` directory.
+
+#### Working with @matthewcpp/webgl
+
+Most likey the webgl framework will needed to modified / extended as a part of adding additional samples. 
+The easiest way to do this is with the use of `npm link`.  Clone the webgl framework next to this repository and run:
+
+```shell script
+npm link ../webgl
+```
+
+##### MacOS
+
+This may fail on MacOS due to a permission error.  In that case you can add a global folder to NPM.
+```shell script
+mkdir ~/development/npm_global
+npm config set prefix ~/development/npm_global
+```
+
+Add the path to your .zprofile:
+```shell script
+nano ~/.zprofile
+export PATH=~/development/npm_global:$PATH
+source ~/.zprofile 
+```

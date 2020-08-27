@@ -12,9 +12,13 @@ function copyModules(options) {
     }
 
     const webglSrc = path.join(projectDir, "node_modules/@matthewcpp/webgl/dist/webgl.es.js");
-    const webglDest = path.join(projectDir, "dist/webgl/webgl.es.js");
+    const webglDir = path.join(projectDir, "dist/webgl");
+    const webglDest = path.join(webglDir, "webgl.es.js");
 
     if (options.forceWebgl || !fs.existsSync(webglDest)) {
+        if (!fs.existsSync(webglDir))
+            fs.mkdirSync(webglDir);
+
         const webgl = fs.readFileSync(webglSrc, "utf8");
         fs.writeFileSync(webglDest, webgl.replace("'gl-matrix'", `'${options.glMatrixPath}'`))
     }

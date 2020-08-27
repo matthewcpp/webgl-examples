@@ -19,8 +19,8 @@ async function buildExample(name, config) {
     const sampleDestDir = path.join(distDir, name);
     const sampleOutputPath = path.join(sampleDestDir, `${name}.js`);
 
-    const webglPath = config.webglModulePath;
-    const glMatrixPath = config.glMatrixModulePath;
+    const webglPath = config.rollup.webglModulePath;
+    const glMatrixPath = config.rollup.glMatrixModulePath;
 
     if (!fs.existsSync(sampleSrcDir))
         throw new Error(`Unable to locate sample: ${name}. Expected: ${sampleSrcDir}`);
