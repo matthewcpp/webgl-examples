@@ -1,6 +1,6 @@
 # @matthewcpp/webgl-examples
 This repository contains sample scenes for the [@matthewcpp/webgl](https://github.com/matthewcpp/webgl) framework. 
-It is also serves as a developent harness for adding new features.
+It is also serves as a development harness for adding new features.
 
 ### Configuration and development
 
@@ -18,7 +18,7 @@ The build script will compile and rollup all typescript files, while copying all
 
 #### Working with @matthewcpp/webgl
 
-Most likey the webgl framework will needed to modified / extended as a part of adding additional samples. 
+Most likely the webgl framework will be modified / extended as a part of working with the samples. 
 The easiest way to do this is with the use of `npm link`.  Clone the webgl framework next to this repository and run:
 
 ```shell script

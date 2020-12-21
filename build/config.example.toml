@@ -11,4 +11,4 @@ glMatrixModulePath = "/gl-matrix/index.js"
 [sampleAssets]
 
 # The base path to use with the modelUrl method.
-modelBaseUrl = "http://www.example.com/models/"
+modelBaseUrl = "http://localhost:8080/models/"
