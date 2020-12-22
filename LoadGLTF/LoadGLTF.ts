@@ -1,4 +1,4 @@
-import {glMatrix} from "gl-matrix";
+import {glMatrix, quat} from "gl-matrix";
 import {Arcball, Loader, LightType, Node, Scene} from "webgl"
 
 import {modelUrl} from "../Util/ModelUrl"
@@ -13,13 +13,18 @@ window.onload = async () => {
     webGl = new Scene(glCanvas);
     await webGl.init();
 
+    window.onresize = () => {
+        webGl.canvasResized();
+    }
+
     const loader = new Loader(webGl);
     await loader.load(modelUrl("OrientationTest/OrientationTest.gltf"));
+    //await loader.load(modelUrl("Cube/Cube.gltf"));
 
     const directionalLight = new Node();
     directionalLight.components.light = webGl.createLight(LightType.Directional, directionalLight);
     directionalLight.position = [0.0, 3, 0.0];
-    directionalLight.rotation = [50.0, -30.0, 0.0];
+    quat.fromEuler(directionalLight.rotation, 50.0, -30.0, 0.0);
     directionalLight.updateMatrix();
     webGl.rootNode.addChild(directionalLight);
 
