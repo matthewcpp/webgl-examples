@@ -1,5 +1,5 @@
 import {glMatrix, quat} from "gl-matrix";
-import {Arcball, Loader, LightType, Node, Scene} from "webgl"
+import {Arcball, Headlight, Loader, LightType, Node, Scene} from "webgl"
 
 import {modelUrl} from "../Util/ModelUrl"
 
@@ -33,6 +33,10 @@ window.onload = async () => {
     const arcball = new Arcball(webGl.mainCamera.node, webGl);
     arcball.setInitial(updatedWorldBounding);
     webGl.mainCamera.node.components.behavior = arcball;
+    webGl.mainCamera.near = 0.01;
+    webGl.mainCamera.far = 1000
+
+    directionalLight.components.behavior = new Headlight(directionalLight, webGl.mainCamera.node, webGl);
 
     webGl.start();
 }
